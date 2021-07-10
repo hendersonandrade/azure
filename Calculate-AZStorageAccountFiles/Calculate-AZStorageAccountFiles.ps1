@@ -10,7 +10,7 @@ $ReadItems = 0
 foreach ($item in $list) {
     $blob = $null
     try {
-        $blob = Get-AzStorageBlob -container compline -Context $Context -Blob $item.FullPath -ErrorAction Stop
+        $blob = Get-AzStorageBlob -container container_name -Context $Context -Blob $item.FullPath -ErrorAction Stop
         $size += $blob.Length
         Write-Host "Size of files in bytes: $($Size)" -ForegroundColor Green
         $ReadItems++
