@@ -1,1 +1,1 @@
-![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)   [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/hendersonandrade/azure/pull/)
+![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)   [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/hendersonandrade/azure/pulls)
