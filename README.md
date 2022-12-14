@@ -1,1 +1,1 @@
-![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)  [![GitHub branches](https://badgen.net/github/branches/Naereen/Strapdown.js)](https://github.com/Naereen/Strapdown.js/)
+![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)   [![GitHub branches](https://badgen.net/github/branches/Naereen/Strapdown.js)](https://github.com/Naereen/Strapdown.js/)   [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
