@@ -1,1 +1,1 @@
-![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)   ![SupportedCloudProvider](https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)   [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/hendersonandrade/azure.js/pull/)
