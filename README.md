@@ -1,1 +1,1 @@
-![Maintainer](https://img.shields.io/badge/maintainer-AzurePolicyTeam-blue)
+![Maintainer](https://img.shields.io/badge/Maintainer-AzurePolicyTeam-blue)
