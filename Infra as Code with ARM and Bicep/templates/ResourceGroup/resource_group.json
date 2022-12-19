@@ -7,6 +7,12 @@
             "metadata": {
                 "description": "Resource Group Name"
             }
+        },
+        "Location": {
+            "type": "string",
+            "metadata": {
+                "description": "Resource Group Location"
+            }
         }
     },
     "variables": {},
@@ -14,6 +20,7 @@
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "2018-05-01",
+            "location": "[parameters('Location')]",
             "name": "[parameters('Name')]",
             "properties": {}
         }
@@ -22,6 +29,10 @@
         "ResourceGroupName": {
             "type": "string",
             "value": "[parameters('Name')]"
+        },
+        "ResourceGroupLocation": {
+            "type": "string",
+            "value": "[parameters('Location')]"
         }
     }
 }
