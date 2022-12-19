@@ -16,7 +16,8 @@ jobs:
         id: DeployARM
         uses: Azure/arm-deploy@v1
         with:
-          scope: subscription          
+          scope: subscription
+          region: eastus
           deploymentName: GitHub_Deploy_ResourceGroup          
           template: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.json
           parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json
