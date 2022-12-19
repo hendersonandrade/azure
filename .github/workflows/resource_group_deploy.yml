@@ -22,5 +22,5 @@ jobs:
           region: eastus
           
     # output containerName variable from template
-      - run: echo ${{ steps.DeployARM.outputs.ResourceGroupName }}
-      - run: echo ${{ steps.DeployARM.outputs.ResourceGroupLocation }}
+      - run: echo ${{ steps.deploy.outputs.ResourceGroupName }}
+      - run: echo ${{ steps.deploy.outputs.ResourceGroupLocation }}
