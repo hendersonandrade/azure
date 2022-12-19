@@ -25,4 +25,5 @@ jobs:
     # output containerName variable from template
       - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
       - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
-      - run: echo ${{ steps.deployARM.outputs }}
+      - run: ${{ steps.deployARM.outputs }}
+      - run: '${{ steps.deployARM.outputs }}'
