@@ -1,19 +1,18 @@
 on: [push]
-  name: Azure Resource Manager  
-  jobs:
-    build-and-deploy:
-      runs-on: ubuntu-latest
-      steps:
-
-        # Checkout code
+name: Azure Resource Manager  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout code
       - uses: actions/checkout@main
 
-        # Log into Azure
+    # Log into Azure
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CONNECTION }}
 
-        # Deploy ARM template
+    # Deploy ARM template
       - name: Run ARM deploy
         uses: azure/arm-deploy@v1
         with:
@@ -22,5 +21,5 @@ on: [push]
           template: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json
           parameters: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json
 
-        # output containerName variable from template
+    # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
