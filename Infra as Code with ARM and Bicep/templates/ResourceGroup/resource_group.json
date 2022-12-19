@@ -7,20 +7,12 @@
             "metadata": {
                 "description": "Resource Group Name"
             }
-        },
-        "Region": {
-            "type": "string",
-            "metadata": {
-                "description": "Resource Group Location"
-            }
-        }
-    },
+        },    
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
-            "location": "[parameters('Region')]",
+            "apiVersion": "2018-05-01",            
             "name": "[parameters('Name')]",
             "properties": {}
         }
@@ -29,10 +21,6 @@
         "ResourceGroupName": {
             "type": "string",
             "value": "[parameters('Name')]"
-        },
-        "ResourceGroupLocation": {
-            "type": "string",
-            "value": "[parameters('Region')]"
-        }
+        },        
     }
 }
