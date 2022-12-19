@@ -17,9 +17,9 @@ jobs:
         with:
           deploymentMode: Incremental
           deploymentName: GitHub_Deploy_ResourceGroup          
-          template: "/azure/Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json"
+          template: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json
           resourceGroupName: rg-garbage
-          parameters: "/azure/Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json"
+          parameters: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json
           
     # output containerName variable from template
     #  - run: echo ${{ steps.deploy.outputs.resourcegroupname }}
