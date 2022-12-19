@@ -22,4 +22,4 @@ jobs:
           region: eastus
           
     # output containerName variable from template
-    #  - run: echo ${{ steps.deploy.outputs.resourcegroupname }}
+      - run: echo ${{ steps.deploy.outputs }}
