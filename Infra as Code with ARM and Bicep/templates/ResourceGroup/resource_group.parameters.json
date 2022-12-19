@@ -4,6 +4,6 @@
     "parameters": {
         "Name": {
             "value": "rg-template-example"
-        },
+        }
     }
 }
