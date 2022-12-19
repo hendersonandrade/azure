@@ -18,7 +18,7 @@ jobs:
           deploymentMode: Incremental
           deploymentName: GitHub_Deploy_ResourceGroup          
           template: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json
-          "resourceGroupName": rg-wrong-value-yaml
+          resourceGroupName: rg-garbage
           parameters: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json
           
     # output containerName variable from template
