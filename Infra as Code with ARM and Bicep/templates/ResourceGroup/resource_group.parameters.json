@@ -4,6 +4,9 @@
     "parameters": {
         "Name": {
             "value": "rg-template-example"
+        },
+        "Location": {
+            "value": "eastus"
         }
     }
 }
