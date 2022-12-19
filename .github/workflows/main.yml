@@ -15,12 +15,17 @@ jobs:
       - name: Deploy Azure Resource Manager (ARM) Template
         uses: Azure/arm-deploy@v1
         with:
+          scope: subscription
           deploymentMode: Incremental
           deploymentName: GitHub_Deploy_ResourceGroup          
           template: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json          
           parameters: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json
           
           # resourceGroupName: rg-garbage
+          
+      - name: Deploy Azure Resource Manager (ARM) Template
+      
+        
           
     # output containerName variable from template
     #  - run: echo ${{ steps.deploy.outputs.resourcegroupname }}
