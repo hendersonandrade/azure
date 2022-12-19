@@ -1,6 +1,20 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
+    "parameters": {
+        "Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Resource Group Name"
+            }
+        },
+        "Location": {
+            "type": "string",
+            "metadata": {
+                "description": "Resource Group Location"
+            }
+        }
+    },
     "variables": {},
     "resources": [
         {
