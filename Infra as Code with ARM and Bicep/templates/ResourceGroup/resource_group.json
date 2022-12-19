@@ -4,6 +4,7 @@
     "parameters": {
         "Name": {
             "type": "string",
+            "defaultValue": "rg-sample-main",
             "metadata": {
                 "description": "Resource Group Name"
             }
