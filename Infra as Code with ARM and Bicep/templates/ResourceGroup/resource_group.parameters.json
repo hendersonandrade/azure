@@ -5,7 +5,7 @@
         "Name": {
             "value": "rg-template-example"
         },
-        "Location": {
+        "Region": {
             "value": "eastus2"
         }
     }
