@@ -13,11 +13,12 @@ jobs:
           creds: ${{ secrets.AZURE_CONNECTION }}
       
       - name: Deploy Azure Resource Manager (ARM) Template
-        uses: Azure/arm-deploy@v1.0.9
+        uses: Azure/arm-deploy@v1
         with:
           deploymentMode: Incremental
           deploymentName: GitHub_Deploy_ResourceGroup          
           template: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json
+          "resourceGroupName": rg-wrong-value-yaml
           parameters: /Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json
           
     # output containerName variable from template
