@@ -3,9 +3,7 @@
     "contentVersion": "1.0.0.1",
     "parameters": {
         "Name": {
-            "type": "string",
-            "defaultValue": "rg-sample-main",
-            "value": "rg-wrong-value",
+            "type": "string",            
             "metadata": {
                 "description": "Resource Group Name"
             }
