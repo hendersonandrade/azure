@@ -20,7 +20,8 @@ jobs:
           template: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.json
           parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json
           region: eastus
+          deploymentOutputs: "ResourceGroupName"
+
           
     # output containerName variable from template
-      - run: echo ${{ steps.DeployARM.outputs.ResourceGroupName }}
-      - run: echo ${{ steps.DeployARM.outputs.ResourceGroupLocation }}
+      - run: echo $(ResourceGroupName)
