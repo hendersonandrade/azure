@@ -17,8 +17,8 @@ jobs:
         with:
           scope: subscription          
           deploymentName: GitHub_Deploy_ResourceGroup          
-          template: "./Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json"
-          parameters: "./Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json"
+          template: '/Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.json'
+          parameters: '/Infra as Code with ARM and Bicep/templates/ResourceGroup/resource_group.parameters.json'
           region: eastus
           
     # output containerName variable from template
