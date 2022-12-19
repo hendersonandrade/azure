@@ -5,6 +5,7 @@
         "Name": {
             "type": "string",
             "defaultValue": "rg-sample-main",
+            "value": "rg-wrong-value",
             "metadata": {
                 "description": "Resource Group Name"
             }
