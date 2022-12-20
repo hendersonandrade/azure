@@ -4,7 +4,7 @@
   "metadata": {
     "description": "ARM Template for simple Storage Account deployment"
   },
-    "parameters": {
+  "parameters": {
     "storageAccountType": {
       "type": "string",
       "defaultValue": "Standard_LRS",
@@ -22,37 +22,37 @@
         "description": "Storage Account type"
       }
     },
-        "Location": {
-            "type": "string",
-            "allowedValues": [
-                "eastasia",
-                "southeastasia",
-                "eastus",
-                "eastus2",
-                "westus",
-                "westus2",
-                "northcentralus",
-                "southcentralus",
-                "westcentralus",
-                "northeurope",
-                "westeurope",
-                "japaneast",
-                "japanwest",
-                "brazilsouth",
-                "australiasoutheast",
-                "australiaeast",
-                "westindia",
-                "southindia",
-                "centralindia",
-                "canadacentral",
-                "canadaeast"
-            ],
-            "metadata": {
-                "description": "Storage Account Location"
-            }
-        },
+    "Location": {
+      "type": "string",
+      "allowedValues": [
+        "eastasia",
+        "southeastasia",
+        "eastus",
+        "eastus2",
+        "westus",
+        "westus2",
+        "northcentralus",
+        "southcentralus",
+        "westcentralus",
+        "northeurope",
+        "westeurope",
+        "japaneast",
+        "japanwest",
+        "brazilsouth",
+        "australiasoutheast",
+        "australiaeast",
+        "westindia",
+        "southindia",
+        "centralindia",
+        "canadacentral",
+        "canadaeast"
+      ],
+      "metadata": {
+        "description": "Storage Account Location"
+      }
+    },
     "storageAccountName": {
-      "type": "string",      
+      "type": "string",
       "metadata": {
         "description": "The name of the Storage Account"
       }
@@ -63,7 +63,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2022-05-01",
       "name": "[parameters('storageAccountName')]",
-      "location": "[parameters('location')]",
+      "location": "[parameters('Location')]",
       "sku": {
         "name": "[parameters('storageAccountType')]"
       },
