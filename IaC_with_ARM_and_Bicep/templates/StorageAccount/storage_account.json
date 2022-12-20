@@ -45,7 +45,8 @@
         "southindia",
         "centralindia",
         "canadacentral",
-        "canadaeast"
+        "canadaeast",
+        "wrongvalue"
       ],
       "metadata": {
         "description": "Storage Account Location"
