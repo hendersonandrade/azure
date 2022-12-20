@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "Name": {
-            "value": "rg-github-sample"
+            "value": "rg-github-sample6"
         },
         "Location": {
             "value": "eastus"
