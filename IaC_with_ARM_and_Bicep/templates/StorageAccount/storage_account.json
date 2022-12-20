@@ -22,12 +22,35 @@
         "description": "Storage Account type"
       }
     },
-    "location": {
-      "type": "string",      
-      "metadata": {
-        "description": "Location for the storage account."
-      }
-    },
+        "Location": {
+            "type": "string",
+            "allowedValues": [
+                "eastasia",
+                "southeastasia",
+                "eastus",
+                "eastus2",
+                "westus",
+                "westus2",
+                "northcentralus",
+                "southcentralus",
+                "westcentralus",
+                "northeurope",
+                "westeurope",
+                "japaneast",
+                "japanwest",
+                "brazilsouth",
+                "australiasoutheast",
+                "australiaeast",
+                "westindia",
+                "southindia",
+                "centralindia",
+                "canadacentral",
+                "canadaeast"
+            ],
+            "metadata": {
+                "description": "Storage Account Location"
+            }
+        },
     "storageAccountName": {
       "type": "string",      
       "metadata": {
