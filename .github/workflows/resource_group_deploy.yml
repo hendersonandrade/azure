@@ -8,10 +8,12 @@ jobs:
     # Checkout code
     - name: Checkout Code
       uses: actions/checkout@main
-
-    - name: Run ARM TTK
-      uses: rfernandezdo/arm-ttk@v1.1
-
+      
+    - name: Run ARM-TTK with reviewdog
+      uses: microsoft/action-armttk@0.0.5
+      with:    
+        github_token: ${{ github.token }}
+        
     # Log into Azure
     - name: Login to Azure
       uses: azure/login@v1
