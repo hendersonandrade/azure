@@ -13,6 +13,8 @@ jobs:
       uses: microsoft/action-armttk@0.0.5
       with:    
         github_token: ${{ github.token }}
+        glob_pattern: "**/*.json"
+        bicepFile: "**/*.json"
         workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup
         
     # Log into Azure
