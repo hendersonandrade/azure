@@ -11,7 +11,7 @@ jobs:
        # path: IaC_with_ARM_and_Bicep/templates/ResourceGroup
         #files: resource_group.json, resource_group.parameters.json
     
-    - run: echo 'WORKSPACE DIR: $env:GITHUB_WORKSPACE'
+    - run: echo 'WORKSPACE DIR:' ${{ $env:GITHUB_WORKSPACE}}
 
     # Checkout code
     - name: Checkout Code
