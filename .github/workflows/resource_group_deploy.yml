@@ -8,12 +8,12 @@ jobs:
     - name: PowerShell script  
       uses: Amadevus/pwsh-script@v2.0.3
       with:    
-        script: 'dir'
+        script: 'Get-ChildItem'
     
-#    - name: ARM Template Toolkit (ARM TTK)
- #     uses: aliencube/arm-ttk-actions@v0.3
-  #    with:
-   #    path: ./IaC_with_ARM_and_Bicep/templates/ResourceGroup/
+    - name: ARM Template Toolkit (ARM TTK)
+      uses: aliencube/arm-ttk-actions@v0.3
+      with:
+       path: hendersonandrade/Azure/IaC_with_ARM_and_Bicep/templates/ResourceGroup/
 
     # Checkout code
     - name: Checkout Code
