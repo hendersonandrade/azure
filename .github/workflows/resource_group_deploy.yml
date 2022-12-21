@@ -16,6 +16,7 @@ jobs:
         glob_pattern: "**/*.json"
         bicepFile: "**/*.json"
         workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup
+        fail_on_error: 'false'
         
     # Log into Azure
     - name: Login to Azure
