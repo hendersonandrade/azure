@@ -10,7 +10,11 @@ jobs:
       with:
         path: IaC_with_ARM_and_Bicep/templates/ResourceGroup
         files: resource_group.json, resource_group.parameters.json
-
+    
+    - name: ARM-TTK
+      uses: venura9/arm-ttk@1.0
+      with:
+        path: IaC_with_ARM_and_Bicep/templates/ResourceGroup
 
     # Checkout code
     - name: Checkout Code
