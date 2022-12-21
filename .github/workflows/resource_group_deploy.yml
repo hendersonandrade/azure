@@ -5,13 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    #- name: ARM Template Toolkit (ARM TTK)
-     # uses: aliencube/arm-ttk-actions@v0.3
-      #with:
-       # path: IaC_with_ARM_and_Bicep/templates/ResourceGroup
-        #files: resource_group.json, resource_group.parameters.json
+    - name: ARM Template Toolkit (ARM TTK)
+      uses: aliencube/arm-ttk-actions@v0.3
+      with:
+       path: azure/IaC_with_ARM_and_Bicep/templates/ResourceGroup       
     
-    - run: echo 'WORKSPACE DIR:' $env:GITHUB_WORKSPACE
+    - run: echo 'WORKSPACE DIR:' ${{$env:GITHUB_WORKSPACE}}
 
     # Checkout code
     - name: Checkout Code
