@@ -9,6 +9,9 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@main
 
+    - name: Run ARM TTK
+      uses: rfernandezdo/arm-ttk@v1.1
+
     # Log into Azure
     - name: Login to Azure
       uses: azure/login@v1
