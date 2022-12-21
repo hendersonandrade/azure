@@ -8,7 +8,7 @@ jobs:
     - name: ARM Template Toolkit (ARM TTK)
       uses: aliencube/arm-ttk-actions@v0.3
       with:
-       path: ./ResourceGroup
+       path: ./IaC_with_ARM_and_Bicep/templates/ResourceGroup/
 
     # Checkout code
     - name: Checkout Code
