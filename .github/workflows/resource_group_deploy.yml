@@ -16,6 +16,8 @@ jobs:
         glob_pattern: "**/*.json"        
         workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup
         fail_on_error: 'false'
+        reporter: github-pr-review
+        level: warning
         
     # Log into Azure
     - name: Login to Azure
