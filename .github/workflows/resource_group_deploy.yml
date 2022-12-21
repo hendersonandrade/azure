@@ -4,24 +4,33 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # Checkout code
-      - uses: actions/checkout@main
 
-    # Log into Azure
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CONNECTION }}
+    # Checkout code
+    - name: Checkout Code
+      uses: actions/checkout@main
       
-      - name: DeployARM        
-        id: DeployARM
-        uses: Azure/arm-deploy@v1
-        with:
-          scope: subscription
-          region: eastus
-          deploymentName: GitHub_Deploy_ResourceGroup          
-          template: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.json
-          parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json          
+    - name: Run ARM-TTK with reviewdog
+      uses: microsoft/action-armttk@0.0.5
+      with:    
+        github_token: ${{ github.token }}
+        
+    # Log into Azure
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CONNECTION }}
+      
+    - name: DeployARM        
+      id: DeployARM
+      uses: Azure/arm-deploy@v1
+      with:
+        scope: subscription
+        region: eastus
+        deploymentName: GitHub_Deploy_ResourceGroup          
+        template: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.json
+        parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json          
           
-    # output containerName variable from template
-      - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
-      - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
+    # output containerName variable from template  
+    # - name: Write Output
+    # - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
+    # - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
