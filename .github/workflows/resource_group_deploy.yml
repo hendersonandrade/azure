@@ -32,6 +32,13 @@ jobs:
         parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json          
           
     # output containerName variable from template
-    - name: Write Output
-    - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
-    - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
+    - name: Set Output 
+      uses: spenserblack/actions-set-output@v1.0.0
+      with:    
+        variables: 
+          steps.deployARM.outputs.ResourceGroupName
+          steps.deployARM.outputs.ResourceGroupLocation
+    
+    # - name: Write Output
+    # - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
+    # - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
