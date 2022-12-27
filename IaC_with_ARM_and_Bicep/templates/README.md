@@ -1,1 +1,1 @@
-${{ SAS_TOKEN }}
+${{ secrets.SAS_TOKEN }}
