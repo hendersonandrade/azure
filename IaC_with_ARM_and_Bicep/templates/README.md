@@ -1,1 +1,1 @@
-{{ SAS_TOKEN }}
+${{ SAS_TOKEN }}
