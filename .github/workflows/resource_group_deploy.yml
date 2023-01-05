@@ -18,7 +18,7 @@ jobs:
       - name: Validate ARM Template
         uses: microsoft/action-armttk@0.0.5
         with:         
-          github_token: ${{ github.token }}          
+          github_token: ${{ secrets.GITHUB_TOKEN }}          
           workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup/
           glob_pattern: "**/*.json"
           tool_name: armttk
@@ -26,4 +26,10 @@ jobs:
           reporter: github-pr-check
           filter_mode: added
           fail_on_error: true
-          reviewdog_flags: bug          
+          reviewdog_flags: bug
+          
+      - name: Create issue about failure
+        if: failure()
+        uses: JasonEtco/create-an-issue@v2.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
