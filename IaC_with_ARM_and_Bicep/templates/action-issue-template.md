@@ -1,5 +1,6 @@
 ---
-title: {{ env.GITHUB_WORKFLOW }} - GitHub Action is Failing...
-assignees: {{ payload.sender.login }}
+title: Someone just pushed
 labels: bug, enhancement
 ---
+
+Assignees: {{ payload.sender.login }}.
