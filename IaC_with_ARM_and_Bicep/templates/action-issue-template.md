@@ -1,6 +1,6 @@
 ---
 title: "{{ env.GITHUB_WORKFLOW }} - GitHub Action is failing..."
-labels: bug, enhancement
+labels: arm-ttk-failure
 ---
 
 The ARM Template `{{ env.GITHUB_WORKFLOW }}` failed. Please see more details above and fix the issues before pull request:
