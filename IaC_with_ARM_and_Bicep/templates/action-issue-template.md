@@ -10,7 +10,7 @@ The ARM Template {{ env.GITHUB_WORKFLOW }} failed. Please see more details above
 - Code Repository: {{ env.GITHUB_REPOSITORY }}
 - GitHub Action Job: {{ env.GITHUB_JOB }}
 - GitHub Action Started by: {{ env.GITHUB_ACTOR }}
-- Exection Attempt before fail: {{ env.GITHUB_RUN_ATTEMPT }}
+- Execution Attempt before fail: {{ env.GITHUB_RUN_ATTEMPT }}
 - Agent Type: {{ env.RUNNER_NAME }}
 - Agent OS: {{ env.RUNNER_OS }}
 - OS Architecture: {{ env.RUNNER_ARCH }}
