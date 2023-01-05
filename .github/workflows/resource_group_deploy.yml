@@ -19,7 +19,7 @@ jobs:
         uses: microsoft/action-armttk@0.0.5
         with:         
           github_token: ${{ github.token }}          
-          workdir: /IaC_with_ARM_and_Bicep/templates/ResourceGroup/
+          workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup/
           glob_pattern: "**/*.json"
           tool_name: armttk
           level: error
