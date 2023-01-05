@@ -1,41 +1,29 @@
-on: [push]
-name: Azure Resource Manager - Resource Group Deploy
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
+name: Validate Resource Group Template
 
-    # Checkout code
-    - name: Checkout Code
-      uses: actions/checkout@main
-      
-    - name: Run ARM-TTK with reviewdog
-      uses: microsoft/action-armttk@0.0.5
-      with:    
-        github_token: ${{ github.token }}
-        glob_pattern: "**/*.json"        
-        workdir: IaC_with_ARM_and_Bicep/templates/ResourceGroup
-        fail_on_error: 'false'
-        reporter: github-pr-review
-        level: warning
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  ValidateTemplate_ResourceGroup:    
+    runs-on: ubuntu-latest    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          ref: develop
         
-    # Log into Azure
-    - name: Login to Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CONNECTION }}
-      
-    - name: DeployARM        
-      id: DeployARM
-      uses: Azure/arm-deploy@v1
-      with:
-        scope: subscription
-        region: eastus
-        deploymentName: GitHub_Deploy_ResourceGroup          
-        template: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.json
-        parameters: IaC_with_ARM_and_Bicep/templates/ResourceGroup/resource_group.parameters.json          
-          
-    # output containerName variable from template  
-    # - name: Write Output
-    # - run: echo 'Resource Group Name:' ${{ steps.deployARM.outputs.ResourceGroupName }}
-    # - run: echo 'Resource Group Location:' ${{ steps.deployARM.outputs.ResourceGroupLocation }}
+      - name: Validate ARM Template
+        uses: microsoft/action-armttk@0.0.5
+        with:         
+          github_token: ${{ github.token }}
+          glob_pattern: "**/*.json"
+          workdir: templates/ResourceGroup/
+          tool_name: armttk
+          level: error
+          reporter: github-pr-check
+          filter_mode: added
+          fail_on_error: true
+          reviewdog_flags: bug          
