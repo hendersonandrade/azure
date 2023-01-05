@@ -18,9 +18,8 @@ jobs:
       - name: Validate ARM Template
         uses: microsoft/action-armttk@0.0.5
         with:         
-          github_token: ${{ github.token }}
-          glob_pattern: "**/*.json"
-          workdir: templates/ResourceGroup/
+          github_token: ${{ github.token }}          
+          workdir: /ResourceGroup
           tool_name: armttk
           level: error
           reporter: github-pr-check
