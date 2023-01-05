@@ -3,5 +3,26 @@ title: "{{ env.GITHUB_WORKFLOW }} - GitHub Action is failing..."
 labels: bug, enhancement
 ---
 
-- URL of Issue: {{ steps.create-issue.outputs.url }}
-- Assignees: {{ payload.sender.login }}
+
+- GITHUB_ACTION: {{ GITHUB_ACTION }}
+- GITHUB_ACTION_PATH: {{ GITHUB_ACTION_PATH }}
+- GITHUB_ACTION_REPOSITORY: {{ GITHUB_ACTION_REPOSITORY }}
+- GITHUB_ACTIONS: {{ GITHUB_ACTIONS }}
+- GITHUB_HEAD_REF: {{ GITHUB_HEAD_REF }}
+- GitHub Action Started by: {{ payload.sender.login }}
+- GITHUB_REF_NAME: {{ GITHUB_REF_NAME }}
+- GITHUB_REPOSITORY: {{ GITHUB_REPOSITORY }}
+- GITHUB_RUN_ATTEMPT: {{ GITHUB_RUN_ATTEMPT }}
+- RUNNER_OS: {{ RUNNER_OS }}
+- GITHUB_ACTOR: {{ GITHUB_ACTOR }}
+- GITHUB_BASE_REF: {{ GITHUB_BASE_REF }}
+- GITHUB_EVENT_NAME: {{ GITHUB_EVENT_NAME }}
+- GITHUB_EVENT_PATH: {{ GITHUB_EVENT_PATH }}
+- GITHUB_JOB: {{ GITHUB_JOB }}
+- GITHUB_RETENTION_DAYS: {{ GITHUB_RETENTION_DAYS }}
+- RUNNER_ARCH: {{ RUNNER_ARCH }}
+- RUNNER_NAME: {{ RUNNER_NAME }}
+- RUNNER_OS: {{ RUNNER_OS }}
+
+
+See [ActionLog]({{ GITHUB_SERVER_URL }}/{{ GITHUB_REPOSITORY }}/actions/runs/{{ $GITHUB_RUN_ID }} for more information.
