@@ -4,4 +4,4 @@ labels: bug, enhancement
 ---
 
 - URL of Issue: {{ steps.create-issue.outputs.url }}
-- Assignees: {{ payload.sender.login }}.
+- Assignees: {{ payload.sender.login }}
