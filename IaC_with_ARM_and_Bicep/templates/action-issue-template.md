@@ -16,5 +16,5 @@ The ARM Template `{{ env.GITHUB_WORKFLOW }}` failed. Please see more details abo
 [+] OS Architecture: {{ env.RUNNER_ARCH }}</br>
 [+] Log Retention in Days: {{ env.GITHUB_RETENTION_DAYS }}</br>
 </br>
->**Note**
+>**Note** </br>
 > See {{ env.GITHUB_SERVER_URL }}/{{ env.GITHUB_REPOSITORY }}/actions/runs/{{ env.GITHUB_RUN_ID }} for more information.
