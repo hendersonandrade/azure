@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          ref: develop
+          ref: main
         
       - name: Validate ARM Template
         uses: microsoft/action-armttk@0.0.5
