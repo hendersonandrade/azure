@@ -30,7 +30,7 @@ jobs:
           
       - name: Create issue about failure
         if: failure()
-        uses: JasonEtco/create-an-issue@vmain
+        uses: JasonEtco/create-an-issue@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
