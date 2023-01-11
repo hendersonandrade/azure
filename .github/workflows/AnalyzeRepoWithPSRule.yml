@@ -1,0 +1,23 @@
+name: Analyze repository
+
+# Run for main or PRs against main
+on:
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze repository
+    runs-on: ubuntu-latest
+    if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Run PSRule analysis
+      uses: microsoft/ps-rule@v2.7.0
+      with:
+        modules: PSRule.Rules.MSFT.OSS,PSRule.Rules.Azure,PSRule.Rules.CAF,PSRule.Rules.GitHub
