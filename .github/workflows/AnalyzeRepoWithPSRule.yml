@@ -18,4 +18,5 @@ jobs:
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@v2.7.0
       with:
-        modules: PSRule.Rules.Azure,PSRule.Rules.CAF,PSRule.Rules.GitHub
+        modules: PSRule.Rules.Azure
+        path: ./IaC_with_ARM_and_Bicep
