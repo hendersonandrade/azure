@@ -47,7 +47,7 @@
         "canadacentral",
         "canadaeast"        
       ],
-      "defaultValue": "[resourceGroup().location]"
+      "defaultValue": "[resourceGroup().location]",
       "metadata": {
         "description": "Storage Account Location"
       }
