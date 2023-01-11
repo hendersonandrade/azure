@@ -2,7 +2,7 @@ name: Analyze repository
 
 # Run for main or PRs against main
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
   
   workflow_dispatch:
@@ -19,4 +19,4 @@ jobs:
       uses: microsoft/ps-rule@v2.7.0
       with:
         modules: PSRule.Rules.Azure
-        path: ./IaC_with_ARM_and_Bicep
+        path: IaC_with_ARM_and_Bicep/templates
