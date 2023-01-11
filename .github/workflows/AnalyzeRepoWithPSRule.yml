@@ -3,17 +3,15 @@ name: Analyze repository
 # Run for main or PRs against main
 on:
   pull_request:
-    branches:
-    - main
+    branches: [ "main" ]
+  
   workflow_dispatch:
 
 jobs:
   analyze:
     name: Analyze repository
-    runs-on: ubuntu-latest
-    if: github.repository == 'Azure/PSRule.Rules.Azure-quickstart'
+    runs-on: ubuntu-latest    
     steps:
-
     - name: Checkout
       uses: actions/checkout@v3
 
