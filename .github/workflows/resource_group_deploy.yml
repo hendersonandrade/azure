@@ -1,9 +1,6 @@
 name: Validate Resource Group Template
 
 on:
-  push:
-    branches: [ "main" ]
-
   workflow_dispatch:
 
 jobs:
