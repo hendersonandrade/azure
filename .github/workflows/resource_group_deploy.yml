@@ -30,6 +30,18 @@ jobs:
         uses: JasonEtco/create-an-issue@v2.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:     
+        with:
+          update_existing: true
           assignees: ${{ GITHUB.ACTOR }}
           filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
+
+      - name: Close Issue (if tests pass)
+        if: success()
+        uses: actions/stale@v3
+        with:
+          only-labels: 'arm-ttk-failure'
+          stale-issue-label: 'resolved'
+          stale-issue-message: 'All tests passes. Issue is resolved'
+          close-issue-message: 'Closing issue.'
+          days-before-issue-stale: 0
+          days-before-close: 0
