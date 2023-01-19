@@ -30,6 +30,5 @@ jobs:
         uses: JasonEtco/create-an-issue@v2.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          assignees: ${{ payload.sender.login }}
+        with:          
           filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
