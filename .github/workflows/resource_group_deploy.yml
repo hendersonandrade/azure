@@ -31,5 +31,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          assignees: ${{ env.GITHUB_ACTOR }}
+          assignees: ${{ GITHUB_ACTOR }}
           filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
