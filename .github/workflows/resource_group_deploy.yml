@@ -32,6 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:          
           assignees: ${{ GITHUB.ACTOR }}
+          update_existing: true
           filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
 
       - name: Close Issue (if tests pass)
