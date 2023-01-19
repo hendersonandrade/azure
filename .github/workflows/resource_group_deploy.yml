@@ -29,11 +29,12 @@ jobs:
         if: failure()
         uses: JasonEtco/create-an-issue@v2.9.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
         with:          
           assignees: ${{ GITHUB.ACTOR }}
           update_existing: true
-          filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
+          filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md        
+      - run: '[Created or Updated Issue] - Number: ${{ steps.create-issue.outputs.number }} | URL: ${{ steps.create-issue.outputs.url }}'        
 
       - name: Close Issue (if tests pass)
         if: success()
