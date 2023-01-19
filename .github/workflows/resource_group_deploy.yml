@@ -33,7 +33,6 @@ jobs:
         with:          
           assignees: ${{ GITHUB.ACTOR }}          
           filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md        
-      - run: '[Created or Updated Issue] - Number: ${{ steps.create-issue.outputs.number }} | URL: ${{ steps.create-issue.outputs.url }}'        
 
       - name: Close Issue (if tests pass)
         if: success()
