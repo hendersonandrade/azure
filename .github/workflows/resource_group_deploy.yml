@@ -25,26 +25,10 @@ jobs:
           fail_on_error: true
           reviewdog_flags: bug
       
-      - name: open-issue
+      - name: Create issue about failure
         if: failure()
-        uses: rishabhgupta/git-action-issue@v2.0.0
+        uses: JasonEtco/create-an-issue@v2.9.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: ${{ env.GITHUB_WORKFLOW }} - GitHub Action is failing...
-          body: The ARM Template {{ env.GITHUB_WORKFLOW }} failed. Please see more details above and fix the issues before pull request
-                |           Name             |                  Value                  |
-                | -------------------------- | --------------------------------------- |
-                | Start Trigger Type         | {{ env.GITHUB_EVENT_NAME }}             |
-                | Branch Code                | {{ env.GITHUB_REF_NAME }}               |
-                | Code Repository            | {{ env.GITHUB_REPOSITORY }}             |
-                | GitHub Action Job          | {{ env.GITHUB_JOB }}                    |
-                | GitHub Action Started by   | {{ env.GITHUB_ACTOR }}                  |
-                | Execution Attempts         | {{ env.GITHUB_RUN_ATTEMPT }}            | 
-                | Agent Type                 | {{ env.RUNNER_NAME }}                   |
-                | Agent OS                   | {{ env.RUNNER_OS }}                     |
-                | OS Architecture            | {{ env.RUNNER_ARCH }}                   |
-                | Log Retention in Days      | {{ env.GITHUB_RETENTION_DAYS }}         |
-
-            >**Note**
-            > See {{ env.GITHUB_SERVER_URL }}/{{ env.GITHUB_REPOSITORY }}/actions/runs/{{ env.GITHUB_RUN_ID }} for more information.
-          assignees: ${{ env.GITHUB_ACTOR }}
+          filename: IaC_with_ARM_and_Bicep/templates/action-issue-template.md
